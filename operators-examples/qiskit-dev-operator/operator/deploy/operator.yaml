@@ -15,7 +15,7 @@ spec:
       serviceAccountName: qiskit-operator
       containers:
         - name: qiskit-operator
-          image: quay.io/jdob/qiskit-playground-op:1.0
+          image: singhp11/qiskit-operator
           command:
           - qiskit-operator
           imagePullPolicy: Always

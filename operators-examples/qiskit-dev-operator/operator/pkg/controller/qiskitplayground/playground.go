@@ -12,7 +12,7 @@ import (
 )
 
 const port = 8888
-const image = "jdob/quantum:1.1"
+const image = "singhp11/centos-jupyter"
 
 func deploymentName(q *dobtechv1.QiskitPlayground) string {
 	return q.Name
@@ -53,6 +53,20 @@ func (r *ReconcileQiskitPlayground) deployment(q *dobtechv1.QiskitPlayground) *a
 							ContainerPort: 	port,
 							Name:			"playground",
 						}},
+						VolumeMounts: []corev1.VolumeMount{{
+							Name: "qiskit-secret",
+							MountPath: "/tmp/secrets/qiskitsecret",
+							ReadOnly: true,
+	
+						}},
+					}},
+					Volumes: []corev1.Volume{{
+						Name: "qiskit-secret",
+						VolumeSource: corev1.VolumeSource{
+							Secret: &corev1.SecretVolumeSource{
+								SecretName: "qiskit-secret",
+							},
+						},
 					}},
 				},
 			},
