@@ -1,0 +1,12 @@
+apiVersion: operators.coreos.com/v1
+kind: OperatorSource
+metadata:
+  name: qiskit-dev-operator
+  namespace: openshift-marketplace
+spec:
+  type: appregistry
+  endpoint: https://quay.io/cnr
+  registryNamespace: husky_parul
+  displayName: "Community Operators Test"
+  publisher: "Red Hat"
+  
