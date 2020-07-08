@@ -7,6 +7,5 @@ spec:
   type: appregistry
   endpoint: https://quay.io/cnr
   registryNamespace: husky_parul
-  displayName: "Community Operators Test"
+  displayName: "Qiskit Developer's Experence Operator"
   publisher: "Red Hat"
-  
